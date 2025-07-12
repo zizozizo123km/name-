@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حاسبة معدل البكالوريا</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -41,20 +40,15 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- رأس الصفحة -->
     <header class="header-bg text-white p-4 flex justify-between items-center shadow-md rounded-b-lg">
-        <button class="text-2xl focus:outline-none">&#9776;</button> <!-- أيقونة القائمة -->
-        <div class="flex items-center space-x-2">
-            <!-- تمثيل بسيط للشعار -->
+        <button class="text-2xl focus:outline-none">&#9776;</button> <div class="flex items-center space-x-2">
             <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
             </svg>
             <span class="text-xl font-semibold">حاسبتي</span>
         </div>
-        <div class="w-8"></div> <!-- مساحة فارغة للتناسق -->
-    </header>
+        <div class="w-8"></div> </header>
 
-    <!-- منطقة المحتوى الرئيسية -->
     <main class="flex-grow container mx-auto p-4 md:p-6 lg:p-8">
         <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
             <div class="p-4 header-bg text-white text-center font-bold text-lg rounded-t-lg">
@@ -65,7 +59,6 @@
             </div>
         </div>
 
-        <!-- أزرار التنقل (للفروع المختلفة) -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <button class="btn-primary text-white p-3 rounded-lg shadow-md font-medium text-lg" data-branch="ادبية">حساب معدل الشعب الأدبية</button>
             <button class="btn-primary text-white p-3 rounded-lg shadow-md font-medium text-lg" data-branch="علمية">حساب معدل الشعب العلمية</button>
@@ -75,7 +68,6 @@
             <button class="btn-primary text-white p-3 rounded-lg shadow-md font-medium text-lg" data-branch="تقني">حساب معدل شعبة التقني رياضي</button>
         </div>
 
-        <!-- قسم الحاسبة -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden p-4">
             <p class="text-center text-gray-600 mb-4 text-sm md:text-base">
                 ملاحظة: يمكنك ضبط المعاملات حسب المواد التي تدرسها في شعبتك.
@@ -91,8 +83,7 @@
                         </tr>
                     </thead>
                     <tbody id="subjects-table-body">
-                        <!-- سيتم ملء المواد بواسطة JavaScript -->
-                    </tbody>
+                        </tbody>
                     <tfoot>
                         <tr class="bg-gray-100 font-bold">
                             <td class="p-3">المجموع الكلي</td>
@@ -113,15 +104,12 @@
         </div>
     </main>
 
-    <!-- تذييل الصفحة (مبسط) -->
     <footer class="bg-gray-800 text-white p-4 text-center text-sm mt-auto rounded-t-lg">
         <p>&copy; 2025 حاسبتي. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- حاوية الإعلانات - ستظهر في الزاوية السفلية اليسرى -->
-    <div id="ad-container" class="fixed bottom-4 left-4 w-64 h-48 bg-white shadow-lg rounded-lg overflow-hidden z-50">
-        <!-- سيتم حقن إطار الإعلان هنا -->
-    </div>
+    <div id="ad-container" class="fixed top-4 left-4 w-64 h-48 bg-white shadow-lg rounded-lg overflow-hidden z-50">
+        </div>
 
     <script>
         // تعريف مجموعات المواد والمعاملات لكل شعبة
@@ -150,7 +138,7 @@
                 { name: "التربية البدنية", coefficient: 1 }
             ],
             "لغات": [
-                { name: "اللغة العربية", coefficient: 5 },
+                { name: "اللغة العربية", coefficient: 3 },
                 { name: "اللغة الفرنسية", coefficient: 5 },
                 { name: "اللغة الإنجليزية", coefficient: 5 },
                 { name: "اللغة الأجنبية 3", coefficient: 4 }, // يمكن تغييرها لتكون لغة محددة
@@ -315,10 +303,9 @@
         window.onload = () => {
             populateSubjectsTable();
             displayAd(); // عرض أول إعلان فورًا
-            // بدء عرض إعلان جديد كل دقيقة (60000 مللي ثانية)
-            setInterval(displayAd, 60000);
+            // بدء عرض إعلان جديد كل ثانيتين (2000 مللي ثانية)
+            setInterval(displayAd, 2000); // تم التعديل هنا
         };
     </script>
 </body>
 </html>
-
